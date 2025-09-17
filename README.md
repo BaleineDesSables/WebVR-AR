@@ -3,4 +3,5 @@
 ##Web Vr
 
 
-*[texture](../WEBVR/VR.html)
+
+*[texture](https://baleinedessables.github.io/WebVR-AR/VR)
