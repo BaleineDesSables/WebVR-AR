@@ -6,4 +6,5 @@
 
 *[texture](https://baleinedessables.github.io/WebVR-AR/VR)
 
-*[Labyrinthe](https://baleinedessables.github.io/WebVR-AR/VR/Labyrinthe.html)
+*[Labyrinthe](https://baleinedessables.github.io/WebVR-AR/VR)
+
