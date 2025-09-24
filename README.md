@@ -8,6 +8,7 @@
 
 *[Labyrinthe](./Labyrinthe.html)
 
-*[Labyrinthe](./Labyrinthe_small.html)
+*[Petit Labyrinthe](./Labyrinthe_small.html)
+
 
 
