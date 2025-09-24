@@ -4,11 +4,12 @@
 
 
 
-*[texture](./VR.html)
+* [texture](./VR.html)
 
-*[Labyrinthe](./Labyrinthe.html)
+* [Labyrinthe](./Labyrinthe.html)
 
-*[Petit Labyrinthe](./Labyrinthe_small.html)
+* [Petit Labyrinthe](./Labyrinthe_small.html)
+
 
 
 
