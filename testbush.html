@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.7.1/aframe.min.js">
+      
+    </script>
+  </head>
+  <body>
+    <a-scene>
+
+      <a-assets>
+        <img id="monPNG" src="Images/Texture_feuillage_1.png">
+        <a-mixin id="monBush"
+            geometry="primitive: plane; height: 1; width: 1" 
+            material="src: #monPNG; transparent: true; alphaTest: 0.001; side: double" 
+            position="0 0 0"
+          >   
+        </a-mixin>
+      
+      </a-assets>
+
+      <a-plane 
+      mixin="monBush"
+      position="0 0 -4" 
+      rotation="-90 0 0" 
+      ></a-plane>
+      <a-plane 
+      mixin="monBush"
+      position="0 0 -4" 
+      rotation="0 0 0" 
+      ></a-plane>
+      <a-plane 
+      mixin="monBush"
+      position="0 0 -4" 
+      rotation="0 90 0" 
+      ></a-plane>
+      <a-plane 
+      mixin="monBush"
+      position="0 0 -4" 
+      rotation="45 90 0" 
+      ></a-plane>
+
+
+      <a-sky color="#ECECEC"></a-sky>
+
+
+
+
+
+
+    </a-scene>
+  </body>
+</html>

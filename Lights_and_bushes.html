@@ -6,17 +6,10 @@
   <body>
     <a-scene>
      
-      <a-assets>
-        <a-asset-item
-             id="Truck" src= "3d_models/motorhome.glb">
-        </a-asset-item>
-        <a-asset-item
-             id="Car" src= "3d_models/car.glb">
-        </a-asset-item>
-
-
+      <a-assets
+        id="Laby" src= "3d_models/Labyrinthe.glb" >
         <img id="monPNG" src="Images/Texture_feuillage_1.png">
-        <img id="Ground" src="Images/Ground_2.png">
+        <img id="Ground" src="Images/Ground.png">
       </a-assets>
 
 <script>
@@ -109,26 +102,9 @@ AFRAME.registerComponent('huge-plane-group', {
       <a-entity huge-plane-group position="0 2 0" rotation = "0 0 0" scale = "3 3 3"></a-entity>
       <a-entity huge-plane-group position="0 4 0" rotation = "0 45 45" scale = "3 3 3"></a-entity>
       <a-entity huge-plane-group position="0 4 0" rotation = "0 0 0" scale = "5 5 5"></a-entity>
-      <a-entity plane-group position="0 -1 0" rotation = "0 0 0" scale = "5 5 5"></a-entity>
-      <a-entity plane-group position="1 -2 7" rotation = "0 0 0" scale = "5 5 5"></a-entity>
-
       <!-- 3D models -->
-      <a-plane position="0 -0.5 0" rotation="-90 0 0" width="400" height="400" color="FFFF" roughness = "1.0"></a-plane>
-      <a-plane position="0 0 0" rotation="-90 0 0" width="3" height="3" src = "#Ground" roughness = "1.0"></a-plane>
-      <a-entity gltf-model="3d_models/motorhome.glb" scale=".5 .5 .5" position="1.1 1.49138 -1.1" rotation="24.72 -69.43 -0.16"></a-entity>
-      <a-entity gltf-model="#Truck" scale="0.5 0.5 0.5" position = "1.8 0.5 -0.124" ></a-entity>
-      <a-entity gltf-model="3d_models/car.glb" scale="0.005 0.005 0.005" position="0 0.34 1.88" rotation="0 -69.43 -0.16"></a-entity>
-      <a-entity gltf-model="3d_models/car.glb" scale="0.005 0.005 0.005" position="0 0.34155 2" rotation="0 -93.19 -0.16"></a-entity>
-      <a-entity gltf-model="3d_models/car.glb" scale="0.005 0.005 0.005" position="-1.7 0.5 0.1" rotation="20 -40 -0.16"></a-entity>
-
-
-<!-- WALLS -->
-        <!-- 4 murs d'une arène 3x3 m (hauteur 1.5 m) -->
-     <!-- <a-plane position="0 0.75 -1.5" rotation="0 0 0"    width="3" height="1.5" material="color: #FFF; side: double"></a-plane>
-     <a-plane position="0 0.75  1.5" rotation="0 180 0"  width="3" height="1.5" material="color: #FFF; side: double"></a-plane>
-     <a-plane position="-1.5 0.75 0" rotation="0 90 0"   width="3" height="1.5" material="color: #FFF; side: double"></a-plane>
-     <a-plane position=" 1.5 0.75 0" rotation="0 -90 0"  width="3" height="1.5" material="color: #FFF; side: double"></a-plane> -->
-
+      <a-plane position="0 0 0" rotation="-90 0 0" width="4" height="4" src="#Ground" roughness = 1.0></a-plane>
+      <a-entity gltf-model="#Laby" scale="0.5 0.5 0.5" roughness = 0.0 ></a-entitygltf-model></a-entity>
 
       <a-entity light="type: ambient; color: #BBB"></a-entity>
       <a-entity light="color: #BBB; decay: 3.06; intensity: 11.14; type: point" position="-0.5618 3.10016 0.17708"></a-entity>

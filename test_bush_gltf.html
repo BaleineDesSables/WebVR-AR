@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+        <a-assets>
+             <a-mixin id="monBush"
+             material= "transparent: true; alphaTest: 0.001; side: double" 
+             position="0 0 0"
+          >     
+        </a-mixin>
+            <a-asset-item
+            id="Bush" mixin="monBush" src="3d_models/Bush.glb" >
+            </a-asset-item>
+        </a-assets>
+
+
+        <a-entity
+        gltf-model="#Bush"></a-entity>
+      <a-sky color="#ECECEC"></a-sky>
+    </a-scene>
+  </body>
+</html>

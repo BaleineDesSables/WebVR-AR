@@ -1,0 +1,104 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
+  </head>
+  
+  <body>
+    <a-scene>
+     
+      <a-assets>
+        <img id="monPNG" src="Images/Texture_feuillage_1.png">
+      </a-assets>
+
+<script>
+// --- 1) COMPOSANT : un groupe de 3 planes ---
+AFRAME.registerComponent('plane-group', {
+  init() {
+    const el = this.el;
+
+    const planes = [
+      { pos: "0 0 0", rot: "0 90 0" },
+      { pos: "0 0 0", rot: "0 0 0" },
+      { pos: "0 0 0", rot: "90 90 0" }
+    ];
+
+    planes.forEach(p => {
+      const plane = document.createElement("a-entity");
+
+      plane.setAttribute("geometry", "primitive: plane; width: 1; height: 1");
+      plane.setAttribute("material",
+        "src: #monPNG; transparent: true; alphaTest: 0.001; side: double"
+      );
+
+      plane.setAttribute("position", p.pos);
+      plane.setAttribute("rotation", p.rot);
+
+      el.appendChild(plane);
+    });
+  }
+});
+
+
+// --- 2) COMPOSANT : un groupe de groupes ---
+AFRAME.registerComponent('big-plane-group', {
+  init() {
+    const el = this.el;
+
+    const bushes = [
+      { pos: "1 1 0", rot: "0 90 0" },
+      { pos: "-1 1 0", rot: "0 0 0" },
+      { pos: "1 0 0", rot: "90 0 0" },
+      { pos: "0 0 -1", rot: "90 90 0" }
+    ];
+
+    bushes.forEach(b => {
+      const bush = document.createElement("a-entity");
+
+      // <-- ici on ajoute le composant plane-group
+      bush.setAttribute("plane-group", "");
+
+      bush.setAttribute("position", b.pos);
+      bush.setAttribute("rotation", b.rot);
+
+      el.appendChild(bush);
+    });
+  }
+});
+
+// --- 3) COMPOSANT : un groupe de groupes de groups (ça commence à devenir géant) ---
+AFRAME.registerComponent('huge-plane-group', {
+  init() {
+    const el = this.el;
+
+    const bushes = [
+      { pos: "0 2 0", rot: "0 90 0" },
+      { pos: "2 1 0", rot: "0 0 0" },
+      { pos: "0 0 0", rot: "90 90 0" },
+      { pos: "0 2 -1", rot: "90 90 0" }
+    ];
+
+    bushes.forEach(b => {
+      const bush = document.createElement("a-entity");
+
+      // <-- ici on ajoute le composant plane-group
+      bush.setAttribute("big-plane-group", "");
+
+      bush.setAttribute("position", b.pos);
+      bush.setAttribute("rotation", b.rot);
+
+      el.appendChild(bush);
+    });
+  }
+});
+</script>
+
+      <!-- instanciation -->
+      <a-entity huge-plane-group position="0 1 -5" scale = "2 2 2"></a-entity>
+      <a-entity huge-plane-group position="0 1 -5" rotation = "0 45 45"></a-entity>
+      <a-entity huge-plane-group position="3 3 -5" rotation = "0 45 45" scale = "3 3 3"></a-entity>
+      <a-entity huge-plane-group position="3 -3 -5" rotation = "0 30 30" scale = "3 3 3"></a-entity>
+
+      <a-sky color="#ECECEC"></a-sky>
+    </a-scene>
+  </body>
+</html>
